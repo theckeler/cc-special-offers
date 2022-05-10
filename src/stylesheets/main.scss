@@ -2,14 +2,28 @@
 
 .mtd-page {
   section {
-    padding: em(80) 0;
+    padding: em(60) 0;
   }
 
-  .dates {
+  .dates,
+  .pro-offer {
     padding: em(10) em(26);
     background: #ffc20f;
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    text-transform: uppercase;
+    //font-weight: 700;
+  }
+
+  .buttons {
+    margin: em(20) auto em(20) auto;
+    max-width: em(700);
+
+    button {
+      width: 100%;
+      padding: em(10) em(26);
+    }
   }
 
   .output {
@@ -25,6 +39,13 @@
         z-index: 11;
       }
 
+      .pro-offer {
+        position: absolute;
+        top: em(20);
+        left: em(18);
+        z-index: 12;
+      }
+
       img {
         //position: relative;
         z-index: 0;
@@ -32,7 +53,109 @@
     }
 
     button {
+      background: #ffc20f;
+      border-color: #ffc20f;
       margin-top: auto;
+
+      &:hover {
+        color: #000;
+        border-color: #000;
+      }
+    }
+
+    .content {
+      padding: em(20);
+      background-color: #efefef;
+    }
+
+    .pro {
+      button {
+        color: #ffc20f;
+        background: #000;
+        border-color: #000;
+
+        &:hover {
+          color: #ffc20f;
+          border-color: #ffc20f;
+        }
+      }
+    }
+
+    h2 {
+      font-size: rem(28);
+      margin-bottom: em(6);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin-top: em(10);
+      font-size: rem(20);
+      text-transform: uppercase;
+    }
+
+    ul.details {
+      margin-bottom: em(30);
+
+      li {
+        margin-bottom: em(6);
+        list-style-type: disc;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .pro-offer {
+      background: #000;
+      color: #fff;
+    }
+  }
+
+  .filtered {
+    .filtered-title {
+      text-transform: uppercase;
+      text-align: center;
+      padding-bottom: em(10);
+      margin-bottom: em(10);
+      border-bottom: 1px solid #c9c9c9;
+    }
+
+    .offer {
+      display: none;
+      flex: 0 1 33%;
+      margin-bottom: em(20);
+    }
+
+    .filter-pro {
+      li.offer.pro {
+        display: block;
+      }
+    }
+
+    .filter-rebate {
+      li.offer.rebate {
+        display: block;
+      }
+    }
+  }
+
+  .single {
+    .offers {
+      margin-bottom: em(10);
+    }
+
+    p {
+      padding-top: em(14);
+      margin-top: em(10);
+      border-top: 1px solid #c9c9c9;
+    }
+  }
+
+  .bg-grey {
+    .content {
+      background-color: #fff;
     }
   }
 
@@ -42,13 +165,27 @@
 
     &:hover {
       color: #000;
+
+      button {
+        color: #000;
+        border-color: #000;
+      }
     }
   }
-}
 
-section {
-  position: relative;
-  overflow: hidden;
+  .section-1 {
+    h1 {
+      font-size: rem(38);
+      border-bottom: 1px solid #c9c9c9;
+      padding: 0 em(20) em(10) em(20);
+      margin: 0;
+    }
+
+    p {
+      margin: em(30) auto 0 auto;
+      max-width: em(1000);
+    }
+  }
 }
 
 .wrapper {
@@ -85,25 +222,30 @@ footer {
 
 @media (max-width: em(1024px)) {
   .mtd-page {
-  }
-}
-
-@media (max-width: em(768px)) {
-  .mtd-page {
     section {
-      padding: em(40) 0;
+      padding: 0;
+    }
 
-      .wrapper {
-        .col {
-          flex: 0 0 100%;
-          max-width: 100%;
-          width: 100%;
-          margin-bottom: em(20);
+    .col {
+      padding: 0;
+    }
 
-          &:last-of-type {
-            margin-bottom: 0;
-          }
-        }
+    .row {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      margin: 0 0 em(20) 0;
+    }
+
+    .img-wrapper {
+      min-height: em(320);
+    }
+
+    .bg-grey {
+      background: #fff;
+
+      .content {
+        background: #efefef;
       }
     }
 
@@ -111,27 +253,22 @@ footer {
       height: auto !important;
     }
 
-    .img-wrapper {
-      min-height: em(320);
-    }
+    .buttons {
+      max-width: 100%;
+      margin-top: em(20);
 
-    .btn {
-      width: 100%;
-    }
-
-    .hero {
-      max-height: initial;
-      min-height: em(420);
-
-      img {
-        max-height: initial;
-        min-height: em(420);
-        object-position: left;
+      .col {
+        margin-bottom: em(10);
       }
     }
 
-    .row {
-      flex-direction: column;
+    .output button {
+      width: 100%;
     }
+  }
+}
+
+@media (max-width: em(768px)) {
+  .mtd-page {
   }
 }

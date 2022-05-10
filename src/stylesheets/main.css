@@ -239,13 +239,24 @@
   }
 }
 .mtd-page section {
-  padding: 5em 0;
+  padding: 3.75em 0;
 }
-.mtd-page .dates {
+.mtd-page .dates,
+.mtd-page .pro-offer {
   padding: 0.625em 1.625em;
   background: #ffc20f;
   text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.mtd-page .buttons {
+  margin: 1.25em auto 1.25em auto;
+  max-width: 43.75em;
+}
+.mtd-page .buttons button {
+  width: 100%;
+  padding: 0.625em 1.625em;
 }
 .mtd-page .output .image {
   position: relative;
@@ -258,11 +269,90 @@
   bottom: 1.875em;
   z-index: 11;
 }
+.mtd-page .output .image .pro-offer {
+  position: absolute;
+  top: 1.25em;
+  left: 1.125em;
+  z-index: 12;
+}
 .mtd-page .output .image img {
   z-index: 0;
 }
 .mtd-page .output button {
+  background: #ffc20f;
+  border-color: #ffc20f;
   margin-top: auto;
+}
+.mtd-page .output button:hover {
+  color: #000;
+  border-color: #000;
+}
+.mtd-page .output .content {
+  padding: 1.25em;
+  background-color: #efefef;
+}
+.mtd-page .output .pro button {
+  color: #ffc20f;
+  background: #000;
+  border-color: #000;
+}
+.mtd-page .output .pro button:hover {
+  color: #ffc20f;
+  border-color: #ffc20f;
+}
+.mtd-page .output h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.375em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.mtd-page .output h3 {
+  margin-top: 0.625em;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+.mtd-page .output ul.details {
+  margin-bottom: 1.875em;
+}
+.mtd-page .output ul.details li {
+  margin-bottom: 0.375em;
+  list-style-type: disc;
+}
+.mtd-page .output ul.details li:last-child {
+  margin-bottom: 0;
+}
+.mtd-page .output .pro-offer {
+  background: #000;
+  color: #fff;
+}
+.mtd-page .filtered .filtered-title {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 0.625em;
+  margin-bottom: 0.625em;
+  border-bottom: 1px solid #c9c9c9;
+}
+.mtd-page .filtered .offer {
+  display: none;
+  flex: 0 1 33%;
+  margin-bottom: 1.25em;
+}
+.mtd-page .filtered .filter-pro li.offer.pro {
+  display: block;
+}
+.mtd-page .filtered .filter-rebate li.offer.rebate {
+  display: block;
+}
+.mtd-page .single .offers {
+  margin-bottom: 0.625em;
+}
+.mtd-page .single p {
+  padding-top: 0.875em;
+  margin-top: 0.625em;
+  border-top: 1px solid #c9c9c9;
+}
+.mtd-page .bg-grey .content {
+  background-color: #fff;
 }
 .mtd-page a {
   text-decoration: none;
@@ -271,10 +361,19 @@
 .mtd-page a:hover {
   color: #000;
 }
-
-section {
-  position: relative;
-  overflow: hidden;
+.mtd-page a:hover button {
+  color: #000;
+  border-color: #000;
+}
+.mtd-page .section-1 h1 {
+  font-size: 2.375rem;
+  border-bottom: 1px solid #c9c9c9;
+  padding: 0 1.25em 0.625em 1.25em;
+  margin: 0;
+}
+.mtd-page .section-1 p {
+  margin: 1.875em auto 0 auto;
+  max-width: 62.5em;
 }
 
 .wrapper {
@@ -304,39 +403,39 @@ footer {
   padding-bottom: 6.25em;
 }
 
-@media (max-width: 48em) {
+@media (max-width: 64em) {
   .mtd-page section {
-    padding: 2.5em 0;
+    padding: 0;
   }
-  .mtd-page section .wrapper .col {
-    flex: 0 0 100%;
-    max-width: 100%;
+  .mtd-page .col {
+    padding: 0;
+  }
+  .mtd-page .row {
+    flex-direction: column;
     width: 100%;
-    margin-bottom: 1.25em;
-  }
-  .mtd-page section .wrapper .col:last-of-type {
-    margin-bottom: 0;
-  }
-  .mtd-page .h-100 {
-    height: auto !important;
+    padding: 0;
+    margin: 0 0 1.25em 0;
   }
   .mtd-page .img-wrapper {
     min-height: 20em;
   }
-  .mtd-page .btn {
+  .mtd-page .bg-grey {
+    background: #fff;
+  }
+  .mtd-page .bg-grey .content {
+    background: #efefef;
+  }
+  .mtd-page .h-100 {
+    height: auto !important;
+  }
+  .mtd-page .buttons {
+    max-width: 100%;
+    margin-top: 1.25em;
+  }
+  .mtd-page .buttons .col {
+    margin-bottom: 0.625em;
+  }
+  .mtd-page .output button {
     width: 100%;
-  }
-  .mtd-page .hero {
-    max-height: initial;
-    min-height: 26.25em;
-  }
-  .mtd-page .hero img {
-    max-height: initial;
-    min-height: 26.25em;
-    -o-object-position: left;
-       object-position: left;
-  }
-  .mtd-page .row {
-    flex-direction: column;
   }
 }
