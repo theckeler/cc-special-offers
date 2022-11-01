@@ -3,7 +3,7 @@ import React from "react";
 import Output from "./Output";
 
 const DefaultOutput = ({ specialOffersData, displayOutputs }) => {
-  console.log("DefaultOutput", displayOutputs);
+  //console.log("DefaultOutput", displayOutputs);
   return specialOffersData.map((specialOffer, index) => {
     return (
       <Output

@@ -238,6 +238,15 @@
     display: block;
   }
 }
+.hero.slant-down {
+  position: absolute;
+  left: -10000vw;
+  top: -10000vh;
+  display: none;
+  overflow: hidden;
+  height: 0;
+}
+
 .mtd-page section {
   padding: 3.75em 0;
 }
